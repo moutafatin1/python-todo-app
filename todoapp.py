@@ -35,7 +35,10 @@ class TodoApp:
         body = input("Add new todo: ")
         todo = Todo(len(self.todos) + 1, body)
         self.todos.append(todo)
-        print(self.todos)
-        self.data_path.write_text(json.dumps([todo.__dict__ for todo in self.todos]))
+
+        self.save()
 
         print("Todo created Successfully!")
+
+    def save(self):
+        self.data_path.write_text(json.dumps([todo.__dict__ for todo in self.todos]))
