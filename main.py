@@ -10,9 +10,8 @@ prompt += ": "
 app = TodoApp()
 
 
+choice = int(input(prompt))
 while True:
-    choice = int(input(prompt))
-
     if choice == 0:
         break
 
@@ -24,3 +23,5 @@ while True:
 
     if choice == 3:
         app.delete_todo()
+
+    choice = int(input("new command: "))
