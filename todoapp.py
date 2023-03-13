@@ -33,7 +33,7 @@ class TodoApp:
 
     def new_todo(self):
         body = input("Add new todo: ")
-        todo = Todo(len(self.todos) + 1, body)
+        todo = Todo(self.todos[-1].id + 1, body)
         self.todos.append(todo)
         self.save()
 
@@ -43,6 +43,8 @@ class TodoApp:
         todo_id = int(input("Please insert the ID of the todo you want to delete:"))
         self.todos = [todo for todo in self.todos if todo.id != todo_id]
         self.save()
+
+        print(f"The todo with the id {todo_id} deleted successfully")
 
     def save(self):
         self.data_path.write_text(json.dumps([todo.__dict__ for todo in self.todos]))
