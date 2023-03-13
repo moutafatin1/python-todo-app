@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "body": "This is the first Todo",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "body": "This is the second Todo",
+    "completed": true
+  }
+]
